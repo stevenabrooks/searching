@@ -16,11 +16,11 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>System</th>
-    <th>Grade</th>
-    <th>Description</th>
-    <th>Price</th>
+    <th><%= sort_link @q, :name, "Name" %></th>
+    <th><%= sort_link @q, :system, "System" %></th>
+    <th><%= sort_link @q, :grade, "Grade" %></th>
+    <th><%= sort_link @q, :description, "Descritpion" %></th>
+    <th><%= sort_link @q, :price, "Price" %></th>
     <th></th>
   </tr>
 
