@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
   def index
     @q = Product.search(params[:q])
     @products = @q.result
+    @q.build_condition
 
     respond_to do |format|
       format.html # index.html.erb
