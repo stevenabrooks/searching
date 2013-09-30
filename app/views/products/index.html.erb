@@ -1,12 +1,20 @@
 <h1>Listing products</h1>
 
+<%= search_form_for @q do |f| %>
+  <div class="field">
+    <%= f.label :name_cont, 'Name contains' %>
+    <%= f.text_field :name_cont %>
+  </div>
+  <div class="actions"><%= f.submit 'Search' %></div>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>
     <th>System</th>
     <th>Grade</th>
-    <th></th>
-    <th></th>
+    <th>Description</th>
+    <th>Price</th>
     <th></th>
   </tr>
 
@@ -15,9 +23,8 @@
     <td><%= product.name %></td>
     <td><%= product.system %></td>
     <td><%= product.grade %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= product.description %></td>
+    <td><%= product.price %></td>
   </tr>
 <% end %>
 </table>

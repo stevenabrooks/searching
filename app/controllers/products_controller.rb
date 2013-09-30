@@ -2,7 +2,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @q = Product.search(params[:q])
+    @products = @q.result
 
     respond_to do |format|
       format.html # index.html.erb
